@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Personal Information</title>
+  <title id="typing-text">Personal Information</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="image/favicon.png" rel="icon">
+  <link href="image/frial.jpg" rel="icon">
   <link href="image/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -26,6 +26,68 @@
 
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/style2.css" rel="stylesheet">
+
+
+
+  <style>
+    .box {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      background: repeating-conic-gradient(
+        from var(--a),
+        #ff2770 0%,
+        #ff2770 5%,
+        transparent 5%,
+        transparent 40%,
+        #ff2770 50%
+      );
+      border-radius: 20px;
+      animation: animate 4s linear infinite;
+    }
+    .box::before,
+    .box::after {
+      content: "";
+      position: absolute;
+    }
+    .box::before {
+      width: 100%;
+      height: 100%;
+      background: repeating-conic-gradient(
+        from var(--a),
+        #45f3ff 0%,
+        #45f3ff 5%,
+        transparent 5%,
+        transparent 40%,
+        #45f3ff 50%
+      );
+      border-radius: 20px;
+      animation: animate 4s linear infinite;
+      animation-delay: -1s;
+    }
+    .box::after {
+  inset: 8px;
+  background-image: url("image/frial.jpg");
+  background-size: cover; /* This will make the image cover the entire element */
+  border-radius: 15px;
+}
+
+    @property --a {
+      syntax: "<angle>";
+      inherits: false;
+      initial-value: 0deg;
+    }
+    @keyframes animate {
+      0% {
+        --a: 0deg;
+      }
+      100% {
+        --a: 360deg;
+      }
+    }
+  </style>
+
 
 </head>
 
@@ -53,10 +115,11 @@
 
         <div class="row">
           <div class="col-lg-4 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-            <img src="image/frial.jpg" class="img-fluid" alt="">
+            <div class="box"></div>
+            <!-- <img src="image/frial.jpg" class="img-fluid" alt=""> -->
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-            <h3>Bryan Frial</h3>
+            <h3 id="typing-text">Bryan Frial</h3>
             <p class="fst-italic">November 1, 1999</p>
             <ul>
               <li><i class="fa-solid fa-circle-check"></i> <b>Course:</b> BSIT</li>
@@ -72,8 +135,20 @@
           </div>
         </div>
       </div>
+
+      <div class="container mt-3" data-aos="fade-up">
+        <div class="row">
+          <div class="col-12 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3>About Me</h3>
+            <p style="text-align: justify; text-indent: 30px;">I am a passionate individual with a strong desire to make a positive impact on society. My ambition is to become a Policeman and contribute to maintaining law and order. I believe in continuous learning and growth, which is why I am pursuing a degree in BSIT at Central College of the Philippines. I have a strong educational background, having attended St. Matthew College for elementary school and Marist School for high school.</p>
+          </div>
+        </div>
+      </div>
     </section><!-- End About Section -->
+
   </main><!-- End #main -->
+
+
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -95,6 +170,8 @@
   <!-- Vendor JS Files -->
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/swiper-bundle.min.js"></script>
+
+  <script src="js/script.js"></script>
 
   <!-- Template Main JS File -->
   <script src="js/main.js"></script>
